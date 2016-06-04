@@ -17,7 +17,7 @@ public class Zone implements Comparable<Zone> {
     /**
      * @return whether blocking was successful
      */
-    public boolean block() {
+    public synchronized boolean block() {
         if (blocked) {
             return false;
         }
@@ -28,7 +28,7 @@ public class Zone implements Comparable<Zone> {
     /**
      * @return whether releasing was successful
      */
-    public boolean release() {
+    public synchronized boolean release() {
         if (!blocked) {
             return false;
         }
