@@ -1,4 +1,5 @@
 Hendrik Werner // s4549775
+Jasper Haasdijk // s4449754
 
 1a)
 Assume we have 4 zones: zone0..zone3.
