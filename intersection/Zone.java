@@ -7,7 +7,12 @@ package intersection;
  */
 public class Zone {
 
+    private final int ID;
     private boolean blocked;
+
+    public Zone(int id) {
+        ID = id;
+    }
 
     /**
      * @return whether blocking was successful
