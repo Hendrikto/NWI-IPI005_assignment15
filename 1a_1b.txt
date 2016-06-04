@@ -15,4 +15,4 @@ The following happens:
 As you can see we now have two cars both waiting on each other so nothing happens anymore. This is called a deadlock.
 
 1b)
-A deadlock can be avoided by reserving the zones in a specific order. The order does not matter, it justs needs to be consistent. We therefore use their ID to implement the comparable interface to sort zones them before reserving them. This successfully resolves the deadlock.
+A deadlock can be avoided by reserving the zones in a specific order. The order does not matter, it justs needs to be consistent. We therefore use their ID to implement the comparable interface to sort zones before reserving them. This successfully resolves the deadlock.
