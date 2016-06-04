@@ -1,6 +1,7 @@
 package intersection;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -15,6 +16,7 @@ public class Car implements Runnable {
 
     private final int ID;
     private final Zone[] zones;
+    private final Random generator;
 
     /**
      * @param id the id of the car
@@ -26,6 +28,7 @@ public class Car implements Runnable {
     public Car(int id, Zone... zones) {
         ID = id;
         this.zones = zones;
+        generator = new Random();
     }
 
     @Override
@@ -37,7 +40,7 @@ public class Car implements Runnable {
             System.out.printf("Car %d goes %s.\n", ID, d);
             Arrays.stream(blockZones).forEachOrdered(Zone::release);
             try {
-                Thread.sleep(WAIT);
+                Thread.sleep(generator.nextInt(WAIT));
             } catch (InterruptedException ex) {
                 Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
             }
