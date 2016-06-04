@@ -5,7 +5,7 @@ package intersection;
  *
  * @author Hendrik Werner // s4549775
  */
-public class Zone {
+public class Zone implements Comparable<Zone> {
 
     private final int ID;
     private boolean blocked;
@@ -34,6 +34,15 @@ public class Zone {
         }
         blocked = false;
         return true;
+    }
+
+    /**
+     * @param z the zone to compare to
+     * @return the result of the comparison
+     */
+    @Override
+    public int compareTo(Zone z) {
+        return this.ID - z.ID;
     }
 
 }
