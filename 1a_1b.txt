@@ -6,9 +6,9 @@ Assume we have two cars: car0 and car1, both wanting to turn left.
 The following happens:
 
 1. car0 blocks zone0
-2. car2 block zone2
+2. car2 blocks zone2
 3. car0 blocks zone1
-4. car2 block zone3
+4. car2 blocks zone3
 5. car0 waits for zone2 to be released
 5. car2 waits for zone0 to be released
 
