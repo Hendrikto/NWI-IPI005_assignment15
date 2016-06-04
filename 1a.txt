@@ -1,0 +1,14 @@
+Hendrik Werner // s4549775
+
+Assume we have 4 zones: zone0..zone3.
+Assume we have two cars: car0 and car1, both wanting to turn left.
+The following happens:
+
+1. car0 blocks zone0
+2. car2 block zone2
+3. car0 blocks zone1
+4. car2 block zone3
+5. car0 waits for zone2 to be released
+5. car2 waits for zone0 to be released
+
+As you can see we now have two cars both waiting on each other so nothing happens anymore. This is called a deadlock.
