@@ -31,6 +31,9 @@ public class Car implements Runnable {
         generator = new Random();
     }
 
+    /**
+     * Start the car.
+     */
     @Override
     public void run() {
         while (true) {
@@ -55,6 +58,9 @@ public class Car implements Runnable {
         return blockZones;
     }
 
+    /**
+     * Sleep for a random amount of milliseconds up to a maximum of WAIT ms.
+     */
     private void sleepRandom() {
         try {
             Thread.sleep(generator.nextInt(WAIT));
