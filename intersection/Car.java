@@ -1,5 +1,7 @@
 package intersection;
 
+import java.util.Arrays;
+
 /**
  * A car that can ride straight, right or left.
  *
@@ -24,6 +26,18 @@ public class Car implements Runnable {
 
     @Override
     public void run() {
+    }
+
+    /**
+     * @param d the direction the car wants to take
+     * @return a sorted array of zones to block before going in the given
+     * direction
+     */
+    private Zone[] getBlockZones(Direction d) {
+        Zone[] blockZones = new Zone[d.ordinal()];
+        System.arraycopy(zones, 0, blockZones, 0, blockZones.length);
+        Arrays.sort(blockZones);
+        return blockZones;
     }
 
 }
