@@ -5,7 +5,7 @@ package intersection;
  *
  * @author Hendrik Werner // s4549775
  */
-public class Car {
+public class Car implements Runnable {
 
     private final int ID;
     private final Zone[] zones;
@@ -20,6 +20,10 @@ public class Car {
     public Car(int id, Zone... zones) {
         ID = id;
         this.zones = zones;
+    }
+
+    @Override
+    public void run() {
     }
 
 }
