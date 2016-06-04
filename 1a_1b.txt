@@ -1,0 +1,18 @@
+Hendrik Werner // s4549775
+
+1a)
+Assume we have 4 zones: zone0..zone3.
+Assume we have two cars: car0 and car1, both wanting to turn left.
+The following happens:
+
+1. car0 blocks zone0
+2. car2 block zone2
+3. car0 blocks zone1
+4. car2 block zone3
+5. car0 waits for zone2 to be released
+5. car2 waits for zone0 to be released
+
+As you can see we now have two cars both waiting on each other so nothing happens anymore. This is called a deadlock.
+
+1b)
+A deadlock can be avoided by reserving the zones in a specific order. The order does not matter, it justs needs to be consistent. We therefore use their ID to implement the comparable interface to sort zones them before reserving them. This successfully resolves the deadlock.
