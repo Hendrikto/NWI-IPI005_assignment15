@@ -39,11 +39,7 @@ public class Car implements Runnable {
             Arrays.stream(blockZones).forEachOrdered(Zone::block);
             System.out.printf("Car %d goes %s.\n", ID, d);
             Arrays.stream(blockZones).forEachOrdered(Zone::release);
-            try {
-                Thread.sleep(generator.nextInt(WAIT));
-            } catch (InterruptedException ex) {
-                Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
-            }
+            sleepRandom();
         }
     }
 
@@ -57,6 +53,14 @@ public class Car implements Runnable {
         System.arraycopy(zones, 0, blockZones, 0, blockZones.length);
         Arrays.sort(blockZones);
         return blockZones;
+    }
+
+    private void sleepRandom() {
+        try {
+            Thread.sleep(generator.nextInt(WAIT));
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
 }
