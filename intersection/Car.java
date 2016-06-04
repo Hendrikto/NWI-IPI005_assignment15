@@ -1,6 +1,8 @@
 package intersection;
 
 import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * A car that can ride straight, right or left.
@@ -8,6 +10,8 @@ import java.util.Arrays;
  * @author Hendrik Werner // s4549775
  */
 public class Car implements Runnable {
+
+    private static final int WAIT = 100;
 
     private final int ID;
     private final Zone[] zones;
@@ -32,6 +36,11 @@ public class Car implements Runnable {
             Arrays.stream(blockZones).forEachOrdered(Zone::block);
             System.out.printf("Car %d goes %s.\n", ID, d);
             Arrays.stream(blockZones).forEachOrdered(Zone::release);
+            try {
+                Thread.sleep(WAIT);
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 
