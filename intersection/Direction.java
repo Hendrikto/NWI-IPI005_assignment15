@@ -8,7 +8,7 @@ import java.util.Random;
  * @author Hendrik Werner // s4549775
  */
 public enum Direction {
-    Straight, Left, Right;
+    Right, Straight, Left;
 
     private static final Random random = new Random();
 
