@@ -1,5 +1,8 @@
 package intersection;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * A zone on an intersection.
  *
@@ -15,25 +18,25 @@ public class Zone implements Comparable<Zone> {
     }
 
     /**
-     * @return whether blocking was successful
+     * Aquire a lock on this zone.
      */
-    public synchronized boolean block() {
-        if (blocked) {
-            return false;
+    public synchronized void block() {
+        while (blocked) {
+            try {
+                wait();
+            } catch (InterruptedException ex) {
+                Logger.getLogger(Zone.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         blocked = true;
-        return true;
     }
 
     /**
-     * @return whether releasing was successful
+     * Release the lock on this zone.
      */
-    public synchronized boolean release() {
-        if (!blocked) {
-            return false;
-        }
+    public synchronized void release() {
         blocked = false;
-        return true;
+        notifyAll();
     }
 
     /**
