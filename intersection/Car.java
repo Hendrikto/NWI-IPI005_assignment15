@@ -26,6 +26,13 @@ public class Car implements Runnable {
 
     @Override
     public void run() {
+        while (true) {
+            Direction d = Direction.getRandom();
+            Zone[] blockZones = getBlockZones(d);
+            Arrays.stream(blockZones).forEachOrdered(Zone::block);
+            System.out.printf("Car %d goes %s.\n", ID, d);
+            Arrays.stream(blockZones).forEachOrdered(Zone::release);
+        }
     }
 
     /**
