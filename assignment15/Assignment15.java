@@ -4,6 +4,7 @@ import intersection.Car;
 import intersection.Zone;
 
 /**
+ * A simulation of cars going through an intersection.
  *
  * @author Hendrik Werner // s4549775
  * @author Jasper Haasdijk // s4449754
