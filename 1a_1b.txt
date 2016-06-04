@@ -18,6 +18,6 @@ happens anymore. This is called a deadlock.
 
 1b)
 A deadlock can be avoided by reserving the zones in a specific order. The order
-does not matter, it justs needs to be consistent. We therefore use their ID to
+does not matter, it just needs to be consistent. We therefore use their ID to
 implement the comparable interface to sort zones before reserving them. This
 successfully resolves the deadlock.
