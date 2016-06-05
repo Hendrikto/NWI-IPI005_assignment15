@@ -1,6 +1,6 @@
 package assignment15;
 
-import intersection.Car;
+import intersection.Auto;
 import intersection.Zone;
 
 /**
@@ -19,10 +19,10 @@ public class Assignment15 {
         Zone z1 = new Zone(1);
         Zone z2 = new Zone(2);
         Zone z3 = new Zone(3);
-        new Thread(new Car(0, z0, z1, z2)).start();
-        new Thread(new Car(1, z1, z2, z3)).start();
-        new Thread(new Car(2, z2, z3, z0)).start();
-        new Thread(new Car(3, z3, z0, z1)).start();
+        new Thread(new Auto(0, z0, z1, z2)).start();
+        new Thread(new Auto(1, z1, z2, z3)).start();
+        new Thread(new Auto(2, z2, z3, z0)).start();
+        new Thread(new Auto(3, z3, z0, z1)).start();
     }
 
 }

@@ -11,7 +11,7 @@ import java.util.logging.Logger;
  * @author Hendrik Werner // s4549775
  * @author Jasper Haasdijk // s4449754
  */
-public class Car implements Runnable {
+public class Auto implements Runnable {
 
     private static final int WAIT = 100;
 
@@ -26,7 +26,7 @@ public class Car implements Runnable {
      * zone when it goes straight of blocks the first two zones and when turning
      * left it block the first three.
      */
-    public Car(int id, Zone... zones) {
+    public Auto(int id, Zone... zones) {
         ID = id;
         this.zones = zones;
         generator = new Random();
@@ -66,7 +66,7 @@ public class Car implements Runnable {
         try {
             Thread.sleep(generator.nextInt(WAIT));
         } catch (InterruptedException ex) {
-            Logger.getLogger(Car.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Auto.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
