@@ -21,7 +21,7 @@ public class Zone implements Comparable<Zone> {
     /**
      * Aquire a lock on this zone.
      */
-    public synchronized void block() {
+    public synchronized void rijOp() {
         while (blocked) {
             try {
                 wait();
@@ -35,7 +35,7 @@ public class Zone implements Comparable<Zone> {
     /**
      * Release the lock on this zone.
      */
-    public synchronized void release() {
+    public synchronized void rijAf() {
         blocked = false;
         notifyAll();
     }

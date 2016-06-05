@@ -40,9 +40,9 @@ public class Auto implements Runnable {
         while (true) {
             Direction d = Direction.getRandom();
             Zone[] blockZones = getBlockZones(d);
-            Arrays.stream(blockZones).forEachOrdered(Zone::block);
+            Arrays.stream(blockZones).forEachOrdered(Zone::rijOp);
             System.out.printf("Car %d goes %s.\n", ID, d);
-            Arrays.stream(blockZones).forEachOrdered(Zone::release);
+            Arrays.stream(blockZones).forEachOrdered(Zone::rijAf);
             sleepRandom();
         }
     }
