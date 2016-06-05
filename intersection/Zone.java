@@ -7,6 +7,7 @@ import java.util.logging.Logger;
  * A zone on an intersection.
  *
  * @author Hendrik Werner // s4549775
+ * @author Jasper Haasdijk // s4449754
  */
 public class Zone implements Comparable<Zone> {
 
