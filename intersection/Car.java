@@ -41,7 +41,7 @@ public class Car implements Runnable {
             Direction d = Direction.getRandom();
             Zone[] blockZones = getBlockZones(d);
             Arrays.stream(blockZones).forEachOrdered(Zone::block);
-            System.out.printf("Car %d goes %s.\n", ID, d);
+            System.out.printf("Car %d goes %s.%n", ID, d);
             Arrays.stream(blockZones).forEachOrdered(Zone::release);
             sleepRandom();
         }
